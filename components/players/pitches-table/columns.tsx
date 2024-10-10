@@ -50,7 +50,7 @@ export const columns: ColumnDef<IPitch>[] = [
         accessorFn: (d) => d.release_location_x,
       },
       {
-        accessorKey: "release_location_x",
+        accessorKey: "release_location_y",
         header: "Vertical release",
         accessorFn: (d) => d.release_location_y,
       },
