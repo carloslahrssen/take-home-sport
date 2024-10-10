@@ -1,20 +1,19 @@
-import { columns } from "@/components/players/pitchers-table/columns";
-import { DataTable } from "@/components/players/pitchers-table/data-table";
+import PitcherList from "@/components/players/pitchers/pitcher-list";
 import { IPitcher } from "@/types";
 import Link from "next/link";
 
 export default async function Home() {
-  // const pitchers = await getPitchers();
+  const pitchers = await getPitchers();
 
   return (
     <div>
       <div>
-        <h1 className="font-black"> Pitchers </h1>
-        {/* <DataTable columns={columns} data={pitchers.pitchers} /> */}
+        <p className="font-black text-xl pb-2"> Pitchers </p>
+        <PitcherList pitchers={pitchers.pitchers} />
       </div>
       <div className="mt-4">
         <Link href="/pitcher/676974" className="underline ">
-          Link to a pitcher&apos;s page
+          Link to a pitcher&apos;s page (original link to max meyer)
         </Link>
       </div>
     </div>

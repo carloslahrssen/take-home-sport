@@ -11,6 +11,7 @@ import { PlayerProfile } from "../../../components/players/profile";
 import type { IPitch, IPitcherInfo } from "../../../types";
 import { DataTable } from "@/components/players/pitches-table/table";
 import { columns } from "@/components/players/pitches-table/columns";
+import Link from "next/link";
 /**
  *
  * If you would like to display the pitcher's image, you can use the image hosted at
@@ -27,9 +28,17 @@ export default async function Page({
   const { pitches } = await getPitches(pitcherId);
 
   return (
-    <div className="flex flex-col">
-      <div className="max-w-fit flex-row">
-        <Card>
+    <div className="flex flex-col gap-4">
+      <div>
+        <Link
+          href={"/"}
+          className="rounded-sm px-4 py-2 bg-slate-100 hover:bg-slate-300"
+        >
+          Go Back
+        </Link>
+      </div>
+      <div className="min-w-max flex-row">
+        <Card className="mx-auto">
           <CardHeader>
             <div className="flex flex-col justify-between mx-auto">
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 mx-auto">
@@ -48,13 +57,23 @@ export default async function Page({
               </div>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="min-w-max">
             <PlayerProfile pitcherInfo={pitcherInfo} />
           </CardContent>
         </Card>
-        <PitchPlot className="w-64" pitches={pitches} />
       </div>
-      <div>{/* <DataTable columns={columns} data={pitches} /> */}</div>
+      <div className="min-w-max justify-items-center">
+        <Card>
+          <CardContent>
+            <PitchPlot className="w-64" pitches={pitches} />
+          </CardContent>
+        </Card>
+      </div>
+      <div className="min-w-max">
+        <div className="max-w-[1080px] mx-auto">
+          <DataTable columns={columns} data={pitches} />
+        </div>
+      </div>
     </div>
   );
 }

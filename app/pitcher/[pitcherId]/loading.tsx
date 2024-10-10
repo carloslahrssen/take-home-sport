@@ -1,3 +1,11 @@
+import { Spinner } from "@/components/ui/spinner";
+
 export default function Loading() {
-  return <div>Loading ... implement spinner here</div>;
+  return (
+    <div className="w-screen">
+      <div className="mx-auto">
+        <Spinner size="lg" />
+      </div>
+    </div>
+  );
 }

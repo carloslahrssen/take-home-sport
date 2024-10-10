@@ -26,14 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-slate-50`}
       >
         <nav className="fixed flex flex-row items-center px-6 h-16 border border-border inset-x-3 top-3 rounded-xl text-xl font-semibold bg-background shadow">
           Miami Marlins Baseball
         </nav>
-        <main className="pt-24 px-8">
-          {children}
-        </main>
+        <main className="pt-24 px-8">{children}</main>
       </body>
     </html>
   );

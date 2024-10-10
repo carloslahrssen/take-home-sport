@@ -5,29 +5,38 @@ import { ColumnDef } from "@tanstack/react-table";
 
 export const columns: ColumnDef<IPitch>[] = [
   {
-    accessorKey: "batter_stance",
-    header: "Batter Stance",
+    header: "Pitch Info",
+    columns: [
+      {
+        accessorKey: "pitch_type",
+        header: "Pitch Type",
+      },
+      {
+        accessorKey: "velocity",
+        header: "Velo",
+      },
+      {
+        accessorKey: "spin_rate",
+        header: "Spin",
+      },
+    ],
   },
   {
-    accessorKey: "pitch_type",
-    header: "Pitch Type",
-  },
-  {
-    accessorKey: "velocity",
-    header: "Velo",
-  },
-  {
-    header: "Spin",
-    accessorKey: "spin_rate",
-  },
-
-  {
-    accessorKey: "batter_name",
-    header: "Batter Name",
-  },
-  {
-    accessorKey: "batter_position",
-    header: "Batter Position",
+    header: "Batter Info",
+    columns: [
+      {
+        accessorKey: "batter_name",
+        header: "Batter Name",
+      },
+      {
+        accessorKey: "batter_stance",
+        header: "Batter Stance",
+      },
+      {
+        accessorKey: "batter_position",
+        header: "Batter Position",
+      },
+    ],
   },
 ];
 
