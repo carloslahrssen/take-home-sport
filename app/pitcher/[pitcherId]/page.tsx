@@ -39,7 +39,7 @@ export default async function Page({
       </div>
       <div className="min-w-max flex-row">
         <Card className="mx-auto">
-          <CardHeader>
+          <CardHeader className="pb-0">
             <div className="flex flex-col justify-between mx-auto">
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 mx-auto">
                 <Image
@@ -51,7 +51,7 @@ export default async function Page({
               </div>
               <div>
                 <CardTitle>{pitcherInfo.name}</CardTitle>
-                <CardDescription>
+                <CardDescription className="text-center">
                   {pitcherInfo.organization_name}
                 </CardDescription>
               </div>

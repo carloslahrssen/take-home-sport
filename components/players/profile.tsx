@@ -27,11 +27,16 @@ export function PlayerProfile({ pitcherInfo }: ProfileProps) {
 
   return (
     <div className="flex flex-row gap-2 mx-auto justify-center">
-      <div> {pitcherInfo.pitcher_position}</div>
-      <div> | </div>
-      <div> Throws: {pitcherInfo.pitcher_stance}</div>
-      <div> | </div>
-      <div> Age: {playerAge} </div>
+      <p className="font-light text-slate-800">
+        Position: {pitcherInfo.pitcher_position}
+      </p>
+      <span className="text-slate-600 "> | </span>
+      <p className="font-light text-slate-800">
+        {" "}
+        Throws: {pitcherInfo.pitcher_stance}
+      </p>
+      <span className="text-slate-600"> | </span>
+      <p className="font-light text-slate-800"> Age: {playerAge} </p>
     </div>
   );
 }
