@@ -18,8 +18,6 @@ export function PitcherList({ pitchers }: { pitchers: Array<IPitcher> }) {
     router.push(`/pitcher/${id}`);
   };
 
-  console.log(pitchers);
-
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
       {pitchers?.map((pitcher) => (
