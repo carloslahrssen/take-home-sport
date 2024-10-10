@@ -1,6 +1,6 @@
 "use client";
 
-import { IPitch, IPitcher } from "@/types";
+import { IPitch } from "@/types";
 import { ColumnDef } from "@tanstack/react-table";
 
 const twoDecimal = new Intl.NumberFormat("en-In", {

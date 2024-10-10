@@ -43,26 +43,24 @@ const PitchPlot = React.forwardRef<
     height: strikeZone.height + baseballDiameter * 2,
   };
 
-  const pitchColor = useCallback(
-    (pitch: IPitch) => {
-      switch (pitch.pitch_type) {
-        case "CH":
-          return "green";
-        case "FF":
-          return "red";
-        case "SI":
-          return "orange";
-        case "SL":
-          return "blue";
-        default:
-          return "black";
-      }
-    },
-    [pitches]
-  );
+  const pitchColor = useCallback((pitch: IPitch) => {
+    switch (pitch.pitch_type) {
+      case "CH":
+        return "green";
+      case "FF":
+        return "red";
+      case "SI":
+        return "orange";
+      case "SL":
+        return "blue";
+      default:
+        return "black";
+    }
+  }, []);
 
   const openPopover = (p: IPitch) => {
     setCurrentPitchPosition({
+      // @ts-ignore
       content: p,
     });
   };

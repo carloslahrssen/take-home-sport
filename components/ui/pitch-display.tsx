@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-object-type */
 import React from "react";
 import { Separator } from "./separator";
 import { IPitch } from "@/types";
@@ -7,7 +8,6 @@ const twoDecimal = new Intl.NumberFormat("en-In", {
 });
 
 // In case we extend this beyond just relevant pitch data
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface PitchDataDisplayProps extends IPitch {}
 
 const PitchDataDisplay: React.FC<PitchDataDisplayProps> = ({

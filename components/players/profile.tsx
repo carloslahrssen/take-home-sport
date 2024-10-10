@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import type { IPitcherInfo } from "@/types";
 import { useMemo } from "react";
 
