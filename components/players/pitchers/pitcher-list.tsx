@@ -5,12 +5,6 @@ import { Card, CardHeader, CardTitle, CardDescription } from "../../ui/card";
 import { IPitcher } from "@/types";
 import Image from "next/image";
 
-const pitchers = [
-  { id: "1", name: "John Doe", description: "Fastball Specialist" },
-  { id: "2", name: "Jane Smith", description: "Curveball Master" },
-  { id: "3", name: "Mike Johnson", description: "Slider Expert" },
-];
-
 export function PitcherList({ pitchers }: { pitchers: Array<IPitcher> }) {
   const router = useRouter();
 

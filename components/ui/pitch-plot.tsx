@@ -60,7 +60,7 @@ const PitchPlot = React.forwardRef<
 
   const openPopover = (p: IPitch) => {
     setCurrentPitchPosition({
-      // @ts-ignore
+      // @ts-expect-error need to assign types properly to useState
       content: p,
     });
   };
