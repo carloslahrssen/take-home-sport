@@ -63,14 +63,11 @@ export default async function Page({
         </Card>
       </div>
       <div className="min-w-max justify-items-center">
-        <Card>
-          <CardContent>
-            <PitchPlot className="w-64" pitches={pitches} />
-          </CardContent>
-        </Card>
+        <PitchPlot className="w-64" pitches={pitches} />
       </div>
       <div className="min-w-max">
         <div className="max-w-[1080px] mx-auto">
+          <h3 className="text-lg font-medium pb-2"> All pitches </h3>
           <DataTable columns={columns} data={pitches} />
         </div>
       </div>

@@ -3,24 +3,13 @@
 import { IPitch, IPitcher } from "@/types";
 import { ColumnDef } from "@tanstack/react-table";
 
+const twoDecimal = new Intl.NumberFormat("en-In", {
+  maximumFractionDigits: 2,
+});
+
+const booleanToString = (value: boolean) => (value ? "Yes" : "No");
+
 export const columns: ColumnDef<IPitch>[] = [
-  {
-    header: "Pitch Info",
-    columns: [
-      {
-        accessorKey: "pitch_type",
-        header: "Pitch Type",
-      },
-      {
-        accessorKey: "velocity",
-        header: "Velo",
-      },
-      {
-        accessorKey: "spin_rate",
-        header: "Spin",
-      },
-    ],
-  },
   {
     header: "Batter Info",
     columns: [
@@ -35,6 +24,50 @@ export const columns: ColumnDef<IPitch>[] = [
       {
         accessorKey: "batter_position",
         header: "Batter Position",
+      },
+    ],
+  },
+  {
+    header: "Pitch Info",
+    columns: [
+      {
+        accessorKey: "pitch_type",
+        header: "Pitch Type",
+      },
+      {
+        accessorKey: "velocity",
+        header: "Velo (mph)",
+        accessorFn: (d) => twoDecimal.format(d.velocity),
+      },
+      {
+        accessorKey: "spin_rate",
+        header: "Spin (rpm)",
+        accessorFn: (d) => twoDecimal.format(d.spin_rate),
+      },
+      {
+        accessorKey: "release_location_x",
+        header: "Horizontal release",
+        accessorFn: (d) => d.release_location_x,
+      },
+      {
+        accessorKey: "release_location_x",
+        header: "Vertical release",
+        accessorFn: (d) => d.release_location_y,
+      },
+      {
+        accessorKey: "is_swing",
+        header: "Swung at",
+        accessorFn: (d) => booleanToString(d.is_swing),
+      },
+      {
+        accessorKey: "is_contact",
+        header: "Made Contact",
+        accessorFn: (d) => booleanToString(d.is_contact),
+      },
+      {
+        accessorKey: "is_in_play",
+        header: "In play",
+        accessorFn: (d) => booleanToString(d.is_in_play),
       },
     ],
   },
